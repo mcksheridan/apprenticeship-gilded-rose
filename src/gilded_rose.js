@@ -38,10 +38,8 @@ export function updateQuality(items) {
               items[i].quality = items[i].quality + 1
             }
           }
-          if (items[i].sell_in < 6) {
-            if (items[i].quality < 50) {
-              items[i].quality = items[i].quality + 1
-            }
+          if (items[i].sell_in < 6 && items(i).quality < 50) {
+            items[i].quality = items[i].quality + 1
           }
         }
       }
