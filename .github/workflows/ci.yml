@@ -32,11 +32,7 @@ jobs:
     - name: Code Climate Coverage Action
       uses: paambaati/codeclimate-action@v2.7.5
       env:
-<<<<<<< HEAD
-        CC_TEST_REPORTER_ID: ${{ secrets.code_climate_reporter_id }}
-=======
         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
->>>>>>> 9f28204 (Fix: Change environment variable name)
       with:
         coverageCommand: npm run test:coverage
         debug: true
