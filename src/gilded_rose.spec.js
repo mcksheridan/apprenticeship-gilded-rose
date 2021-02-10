@@ -30,7 +30,8 @@ describe('`updateQuality`', () => {
     const passMaximumQuality = new Item('Backstage passes to a TAFKAL80ETC concert', 1, 50);
     const passPostConcert = new Item('Backstage passes to a TAFKAL80ETC concert', -1, 50);
     const passMinimumQuality = new Item('Backstage passes to a TAFKAL80ETC concert', -1, 0);
-    updateQuality([pass, passTenDays, passFiveDays, passMaximumQuality, passPostConcert, passMinimumQuality]);
+    updateQuality([pass, passTenDays, passFiveDays, passMaximumQuality,
+      passPostConcert, passMinimumQuality]);
     expect(pass.quality).toBe(11);
     expect(passTenDays.quality).toBe(10);
     expect(passFiveDays.quality).toBe(18);
