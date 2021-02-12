@@ -6,6 +6,7 @@ describe('`updateQuality`', () => {
     updateQuality([standardItem]);
     expect(standardItem.sell_in).toBe(9);
   });
+});
 
   it('Updates the quality of aged brie', () => {
     const brie = new Item('Aged Brie', 7, 2);
@@ -56,11 +57,17 @@ describe('`updateQuality`', () => {
     expect(minimumQualityElixir.quality).toBe(0);
   });
 
-  it.skip('Updates the quality of conjured items', () => {
+  describe('Conjured items', () => {
     const cake = new Item('Conjured Mana Cake', 5, 10);
     const oldCake = new Item('Conjured Mana Cake', -1, 10);
-    updateQuality([cake, oldCake]);
-    expect(cake.quality).toBe(8);
-    expect(oldCake.quality).toBe(6);
+    beforeAll(() => {
+      updateQuality([cake, oldCake]);
+    });
+    it.skip('Updates the quality of conjured cake', () => {
+      expect(cake.quality).toBe(8);
+    });
+    it.skip('Updates the quality of conjured cake with a negative sell-in', () => {
+      expect(oldCake.quality).toBe(6);
+    });
   });
-});
+  
